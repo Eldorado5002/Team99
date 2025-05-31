@@ -96,7 +96,7 @@ class SpeedEstimator:
             print(f"Error processing MQTT message: {e}")
 
     def send_gate_open_signal(self):
-        """Send gate open signal - ALWAYS executes without cooldown"""
+        """Send gate open signal"""
         if self.mqtt_client is not None:
             try:
                 # Send vehicle detection signal
@@ -302,7 +302,7 @@ class SpeedEstimator:
 class ParkingSystemGUI:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("Parking System - Entry Monitoring (Always Open Gate)")
+        self.root.title("Parking System - Entry Monitoring")
         self.root.geometry("1280x720")
         self.root.configure(bg="#0f1419")
         self.cap = None
@@ -384,7 +384,7 @@ class ParkingSystemGUI:
         logo_frame = tk.Frame(self.header, bg="#1e293b")
         logo_frame.pack(side="left", padx=30, pady=10)
         tk.Label(logo_frame, text="🚗", font=("Segoe UI", 24), bg="#3b82f6", fg="white", width=3, height=1).pack(side="left", padx=5)
-        tk.Label(logo_frame, text="Entry Monitor - Always Open Mode", font=("Segoe UI", 16, "bold"), bg="#1e293b", fg="#93c5fd").pack(side="left")
+        tk.Label(logo_frame, text="Entry Monitor", font=("Segoe UI", 16, "bold"), bg="#1e293b", fg="#93c5fd").pack(side="left")
         control_frame = tk.Frame(self.header, bg="#1e293b")
         control_frame.pack(side="right", padx=30)
         self.start_btn = ttk.Button(control_frame, text="Start System", command=self.start_camera)
@@ -411,7 +411,7 @@ class ParkingSystemGUI:
         self.camera_indicator.pack(side="left", padx=10)
         self.camera_resolution = ttk.Label(camera_header, text="Waiting for camera...")
         self.camera_resolution.pack(side="right")
-        self.camera_feed = tk.Label(camera_section, text="Camera Feed Offline\nClick 'Start System' to begin monitoring\n\n*** ALWAYS OPEN MODE ***\nGate will open for EVERY vehicle detection",
+        self.camera_feed = tk.Label(camera_section, text="Camera Feed Offline\nClick 'Start System' to begin monitoring\n",
                                     bg="#1e293b", fg="gray", font=("Segoe UI", 14))
         self.camera_feed.pack(fill="both", expand=True, pady=20)
 
@@ -438,7 +438,7 @@ class ParkingSystemGUI:
         # Sidebar: Vehicle Log
         self.vehicle_panel = tk.Frame(self.sidebar, bg="#1e293b", bd=1, relief="solid")
         self.vehicle_panel.pack(fill="both", expand=True, padx=10)
-        ttk.Label(self.vehicle_panel, text="🚘 All Detections (Always Open)", style="Title.TLabel").pack(pady=10)
+        ttk.Label(self.vehicle_panel, text="🚘 All Detections", style="Title.TLabel").pack(pady=10)
         self.vehicle_log = tk.Frame(self.vehicle_panel, bg="#1e293b")
         self.vehicle_log.pack(fill="both", expand=True, padx=10, pady=5)
         scrollbar = tk.Scrollbar(self.vehicle_log)
@@ -459,7 +459,7 @@ class ParkingSystemGUI:
         self.socket_indicator.pack(side="left", padx=10)
         self.socket_status = tk.StringVar(value="Connecting...")
         ttk.Label(footer_left, textvariable=self.socket_status).pack(side="left")
-        tk.Label(self.footer, text="Entry Monitoring System v2.1 - Always Open Mode", bg="#1e293b", fg="white").pack(side="right", padx=30)
+        tk.Label(self.footer, text="Entry Monitoring System", bg="#1e293b", fg="white").pack(side="right", padx=30)
 
         self.update_time()
         self.update_indicators()
