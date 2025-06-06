@@ -96,8 +96,8 @@ mongod --version
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/intelligent-parking-system.git
-   cd intelligent-parking-system
+   git clone https://github.com/yourusername/Team99.git
+   cd Team99
    ```
 
 2. **Install Python dependencies**
