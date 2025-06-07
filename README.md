@@ -80,7 +80,7 @@ An advanced **real-time parking management system** designed to optimize urban p
 ### Prerequisites
 
 ```bash
-# Python 3.8+
+# Python 3.10+
 python --version
 
 # Node.js 16+
