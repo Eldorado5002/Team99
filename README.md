@@ -102,7 +102,7 @@ mongod --version
 
 2. **Install Python dependencies**
    ```bash
-   pip install opencv-python-headless paddleocr pymongo pillow paho-mqtt
+   pip install opencv-python numpy torch paddlepaddle paddleocr pymongo pillow paho-mqtt 
    ```
 
 3. **Install YOLOv8 model**
