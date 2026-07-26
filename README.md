@@ -80,7 +80,7 @@ An advanced **real-time parking management system** designed to optimize urban p
 ### Prerequisites
 
 ```bash
-# Python 3.8+
+# Python 3.10+
 python --version
 
 # Node.js 16+
@@ -96,13 +96,13 @@ mongod --version
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/intelligent-parking-system.git
-   cd intelligent-parking-system
+   git clone https://github.com/yourusername/Team99.git
+   cd Team99
    ```
 
 2. **Install Python dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install opencv-python numpy torch paddlepaddle paddleocr pymongo pillow paho-mqtt 
    ```
 
 3. **Install YOLOv8 model**
