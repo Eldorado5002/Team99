@@ -1,7 +1,7 @@
 # Intelligent Urban Parking Management System (IUPMS)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/python-v3.10+-blue.svg)](https://www.python.org/downloads/)
 [![ESP32](https://img.shields.io/badge/ESP32-Compatible-green.svg)](https://www.espressif.com/en/products/socs/esp32)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-16+-339933.svg)](https://nodejs.org/)
@@ -89,14 +89,14 @@ node --version
 # MongoDB (local installation)
 mongod --version
 
-# Arduino IDE (for ESP32 programming)
+# Thonny IDE (to install MicroPython on the ESP32 and upload ESP32_code.py)
 ```
 
 ### 🔧 Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Team99.git
+   git clone https://github.com/Eldorado5002/Team99.git
    cd Team99
    ```
 
@@ -108,8 +108,9 @@ mongod --version
 3. **Install YOLOv8 model**
    ```bash
    pip install ultralytics
-   # The yolov8m.pt model will be downloaded automatically
+   # Gui.py loads yolov8m.pt, which Ultralytics downloads automatically on first run
    ```
+   The `yolov8l.pt` file in this repo is not used by default. To use the larger model instead, change `YOLO("yolov8m.pt")` to `YOLO("yolov8l.pt")` in `Gui.py`.
 
 4. **Set up MongoDB**
    ```bash
@@ -123,12 +124,12 @@ mongod --version
    ```
 
 5. **Configure ESP32**
-   - Flash the `ESP32_code.py` to your ESP32 device
-   - Update WiFi credentials in the code:
+   - Update WiFi credentials in `ESP32_code.py`:
      ```python
      SSID = "Your_WiFi_Name"
      PASSWORD = "Your_WiFi_Password"
      ```
+   - Open `ESP32_code.py` in Thonny and save it to the ESP32 (MicroPython device) as `main.py` so it runs on boot
 
 6. **Run the system**
    ```bash
@@ -373,19 +374,6 @@ We welcome contributions! Please follow these steps:
 4. **Push** to the branch (`git push origin feature/AmazingFeature`)
 5. **Open** a Pull Request
 
-### Development Setup
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-
-# Code formatting
-black *.py
-flake8 *.py
-```
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -410,8 +398,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and questions:
 - **Email**: nagashivashankar0410@gmail.com
-- **Issues**: [GitHub Issues](https://github.com/yourusername/intelligent-parking-system/issues)
-- **Documentation**: [Wiki](https://github.com/yourusername/intelligent-parking-system/wiki)
+- **Issues**: [GitHub Issues](https://github.com/Eldorado5002/Team99/issues)
+- **Documentation**: [Software Requirements Specification](SRS_Team_99.docx)
 
 ---
 
